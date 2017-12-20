@@ -1,0 +1,21 @@
+<h1>{{title}}</h1>
+This course teaches how to build interactive web apps also called 
+as SPA.
+<p></p>
+Duration (Hours) : {{duration}}
+<p></p>
+Course Fee (INR) : {{fee}}
+<p></p>
+<h4>Topics</h4>
+<ul>
+   <li *ngFor="let topic of topics">
+        {{topic}}
+   </li>
+</ul>
+New Topics <input type="text">
+<button>Add Topic</button>
+
+<p></p>
+<button (click)="showFee()">Show Best Price</button>
+
+<h3>{{bestFee}}</h3>
