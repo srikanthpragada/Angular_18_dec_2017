@@ -12,8 +12,10 @@ Course Fee (INR) : {{fee}}
         {{topic}}
    </li>
 </ul>
-New Topics <input type="text">
-<button>Add Topic</button>
+New Topics <input #topic type="text"> <span>{{message}}</span>
+<p></p>
+<button (click)="addTopic(topic.value)">Add Topic</button>
+<button (click)="deleteTopic(topic.value)">Delete Topic</button>
 
 <p></p>
 <button (click)="showFee()">Show Best Price</button>

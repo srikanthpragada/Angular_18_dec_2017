@@ -1,17 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { CourseComponent } from './course.component';
-
+import { BindingComponent } from './binding.component';
 
 @NgModule({
   declarations: [
-    CourseComponent
+    BindingComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [CourseComponent]
+  bootstrap: [BindingComponent]
 })
 export class AppModule { }

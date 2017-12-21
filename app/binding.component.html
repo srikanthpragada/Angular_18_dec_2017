@@ -1,0 +1,17 @@
+
+<span [innerHTML]="message.toUpperCase()"></span>
+<p></p>
+<span  [class.bright]='isBright()'  bind-innerHTML="'Welcome'"></span>
+<p></p>
+<span innerHTML="{{GetDate()}}"></span>
+
+<p></p>
+<span  [style.visibility]="hours() < 11 ? 'visible' : 'hidden'">Great Discounts upto 70%</span>
+<p></p>
+<input type="text"  (keypress)="keyPressed($event)"/>
+
+<p></p>
+
+<input  (change)="v=0" #bright type="checkbox">Bright 
+<p></p>
+<div  [ngClass]="{bright : bright.checked}">Bright Class</div>
