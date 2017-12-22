@@ -25,6 +25,12 @@ export class CourseComponent {
             this.message = "Sorry! Topic not valid!";
     }
 
+    deleteTopicByIndex(idx : number) 
+    {
+        console.log("Deleting index : " + idx);
+        this.topics.splice(idx,1);
+    }
+
     deleteTopic(topic : string) : void 
     {
         // find pos of topic in topics array

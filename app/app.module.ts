@@ -1,15 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BindingComponent } from './binding.component';
+
+import { PipesDemoComponent } from './pipes/pipesdemo.component';
+import { BracketsPipe } from './pipes/brackets.pipe';
+
+import { ParentComponent } from './multi/parent.component';
+import { ChildComponent } from './multi/child.component';
+
 
 @NgModule({
   declarations: [
-    BindingComponent
+     ParentComponent,ChildComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [BindingComponent]
+  bootstrap: [ParentComponent, ChildComponent]
 })
 export class AppModule { }

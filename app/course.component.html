@@ -8,8 +8,9 @@ Course Fee (INR) : {{fee}}
 <p></p>
 <h4>Topics</h4>
 <ul>
-   <li *ngFor="let topic of topics">
-        {{topic}}
+   <li *ngFor="let topic of topics;let idx=index">
+        {{topic}} 
+        <button (click)="deleteTopicByIndex(idx)">Delete</button>
    </li>
 </ul>
 New Topics <input #topic type="text"> <span>{{message}}</span>

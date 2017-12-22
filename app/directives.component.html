@@ -1,0 +1,16 @@
+
+<div *ngIf="offer; then offerBlock; else freshBlock"></div>
+<ng-template #offerBlock>
+     <div>Discount upto 60%</div>
+</ng-template>
+<ng-template #freshBlock><div>Fresh Arrivals</div></ng-template>
+
+<p></p>
+
+<ul>
+    <li *ngFor="let n of nums; let i = index;let oddNum = odd">
+        <div *ngIf="oddNum">
+               {{i+1}} - {{n}}
+        </div>
+    </li>
+</ul>
