@@ -1,0 +1,20 @@
+<form (ngSubmit)="login()" #loginForm="ngForm" novalidate>
+    Username
+    <br>
+    <input type="text" #uname="ngModel" [(ngModel)]="username" 
+        name="username" minlength="4" required>
+    <p></p>
+    Password <br/>
+    <input type="password" #pwd="ngModel"
+         [(ngModel)]="password" name="password" minlength="4" required>
+    <p></p>
+    <button [disabled]="!loginForm.valid" type="submit">Login</button>
+    <button [hidden]="!loginForm.dirty" type="reset">Reset</button>
+    <p></p>
+    Username : {{ uname.value}}
+    <br/>
+    Password : {{ pwd.value}}
+
+    <h2>{{message}}</h2>
+
+</form>

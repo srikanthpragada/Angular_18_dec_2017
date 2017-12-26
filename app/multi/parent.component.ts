@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
     selector: 'st-parent',
@@ -7,14 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent  {
     messages : string[] = 
-    ["Quitter never win winner never quit",
+     [
+     "Quitter never win winners never quit",
      "Nothing works until you work",
      "You see the world in the way you are"
     ]
-    constructor() { }
-
-    
-
+   
     showMessage(msg) {
         console.log("Selected :" + msg);
     }

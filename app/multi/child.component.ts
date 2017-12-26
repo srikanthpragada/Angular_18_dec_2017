@@ -2,8 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'st-child',
-    template: `<h2>{{message}}</h2> 
-               <button (click)="selected(message)">Select</button> `
+    templateUrl : './child.component.html'
 })
 export class ChildComponent  implements OnInit {
     @Input() message : string;
@@ -13,13 +12,13 @@ export class ChildComponent  implements OnInit {
     }
 
     ngOnInit() {
-        console.log("ngOnInit");
+        console.log("Message : " + this.message);
     }
 
 
-    selected(msg : string) 
+    selected() 
     {
-        // raise event and pass parameter to even handler
-        this.selectedMessage.emit(msg); 
+       // raise event and pass parameter to even handler
+       this.selectedMessage.emit(this.message); 
     }
 }
