@@ -1,0 +1,36 @@
+<form (ngSubmit)="login()" [formGroup]="loginForm">
+    Username
+    <br>
+    <input type="text" formControlName="username" />
+    <span *ngIf="submitted">
+        <span *ngIf="loginForm.controls.username.errors?.required">
+            Username must be entered!
+        </span>
+        <span *ngIf="loginForm.controls.username.errors?.minlength">
+            Username must have atleast 
+            {{loginForm.controls.username.errors.minlength.requiredLength}} chars
+        </span>
+    </span>
+    <p></p>
+    Password
+    <br/>
+    <input type="password" formControlName="password" />
+    <span *ngIf="submitted">
+        <span *ngIf="loginForm.controls.password.errors?.required">
+            Password must be entered!
+        </span>
+        <span *ngIf="loginForm.controls.password.errors?.mustHaveStar">
+           Password must have * 
+        </span>
+    </span>
+    <p></p>
+    <button>Login</button>
+    <h3 *ngIf="submitted && loginForm.errors?.invalidPassword">
+          Username and password cannot be same!
+    </h3>
+
+    <h2>{{message}}</h2>
+
+
+
+</form>
