@@ -1,29 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {  ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
-import { PipesDemoComponent } from './pipes/pipesdemo.component';
-import { BracketsPipe } from './pipes/brackets.pipe';
-
-import { ParentComponent } from './multi/parent.component';
-import { ChildComponent } from './multi/child.component';
-
-import { LogService } from './services/log.service';
-import { UseLogComponent } from './services/use-log.component';
-import { UseLog2Component } from './services/use-log2.component';
-import { LoginComponent } from './forms/login.component';
-import { ReactiveLoginComponent } from './forms/rlogin.component';
+import { AddBookComponent } from './http/add-book.component';
+import { WebBooksComponent } from './http/webbooks.component';
+import { BooksService } from './services/BooksService';
 
 
 @NgModule({
   declarations: [
-    ReactiveLoginComponent
+     AddBookComponent, WebBooksComponent
   ],
   imports: [
-    BrowserModule, ReactiveFormsModule
+    BrowserModule, FormsModule, HttpModule
   ],
-  providers: [],
-  bootstrap: [ReactiveLoginComponent]
+  providers: [BooksService],
+  bootstrap: [AddBookComponent,WebBooksComponent]
 })
 export class AppModule { }
