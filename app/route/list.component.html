@@ -1,0 +1,11 @@
+<h2>List Of Countries </h2>
+
+ 
+<div *ngFor="let c of countries">
+       <h3> {{c.Name}} </h3>
+       <a [routerLink]="['/details', c.Code]">Details</a>
+       &nbsp;
+       <a href="" (click)="deleteCountry(c.Code, $event)">Delete </a>
+</div>    
+
+<h3> {{message}} </h3>

@@ -1,0 +1,7 @@
+<h2>Add Country </h2>
+<input type="text" placeholder="Code" #code />
+<input type="text" placeholder="Name" #name/>
+<input type="text" placeholder="Capital" #capital/>
+<p></p>
+<button (click)="addCountry(code.value, name.value, capital.value)">Add Country </button>
+<h4 [innerText]="message"></h4>
