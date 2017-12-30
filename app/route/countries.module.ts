@@ -8,10 +8,14 @@ import {  ListComponent } from './list.component';
 import {  DetailsComponent } from './details.component'; 
 import {  MainComponent } from './main.component'; 
 import {  AddComponent } from './add.component'; 
+import { AddDeactivateGuard } from './add-deactivate.guard';
+import { AddActivateGuard } from './add-activate.guard';
 
 const appRoutes: Routes = [
    { path: 'list', component: ListComponent },
-   { path: 'add', component: AddComponent },
+   { path: 'add', component: AddComponent,
+               canActivate : [AddActivateGuard],
+               canDeactivate : [AddDeactivateGuard] },
    { path: 'details/:code', component: DetailsComponent },
    { path: '', component : ListComponent, pathMatch: 'full'},
    { path: '**', component: ListComponent}
@@ -25,7 +29,7 @@ const appRoutes: Routes = [
     BrowserModule, FormsModule , HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ ],
+  providers: [AddDeactivateGuard, AddActivateGuard],
   bootstrap: [MainComponent ]
 })
 export class CountriesModule { }
